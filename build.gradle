@@ -1,0 +1,43 @@
+
+
+plugins {
+    
+    id 'java'
+    id 'eclipse'
+    id 'war'
+
+    id 'org.springframework.boot' version '2.1.8.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+}
+
+war{
+	enabled = true
+}
+
+bootWar{
+	classifier = 'boot'
+}
+
+group = 'com.comment'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+dependencies {
+    
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'javax.inject:javax.inject:1'
+    
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+}
